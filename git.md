@@ -6,6 +6,11 @@
 	git add some
 	git commit
 
+> 初次使用`git`记得使用下面命令配置
+
+	git config --global user.name '3ogx'
+	git config --global user.email 'webmaster@3ogx.com'
+
 #### 分支
 ###### 创建分支
 	git checkout -b branchename
@@ -116,3 +121,4 @@
 
 ###### git format-patch 
 ###### git reset -head 
+###### git whatchanged -P master...v3

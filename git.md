@@ -122,3 +122,27 @@
 ###### git format-patch 
 ###### git reset -head 
 ###### git whatchanged -P master...v3
+
+
+## 自定义 git 
+
+	git config --global user.name "3ogx"
+	git config --global user.email "3ogx.com@gmail.com"
+
+上面两行代码会产生`.gitconfig` 文件，格式如下：
+
+	[user]
+	name = 3ogx
+	email = 3ogx.com@gmail.com
+	
+#### 更改默认的编辑器
+	git config --global core.editor emacs
+
+#### 添加别名
+	git config --global alias.last 'cat-file commit HEAD'
+
+#### 添加颜色
+	git config color.ui true
+#### 提交模板
+	git config commit.template '/etc/git-commit-template'
+	

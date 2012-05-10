@@ -27,3 +27,8 @@
 
 ###### 最近打开的文件
 > C-c C-r 
+
+#### link
+* [王垠](http://docs.huihoo.com/homepage/shredderyin/links.html)
+* [王纯业](http://ann77.emacser.com/)
+* [Emacs中文网](http://emacser.com/)

@@ -39,6 +39,10 @@
 
 ###### 查看日志
 	git log
+	git log --format=full // 查看日志详细信息
+	git log --pretty=short // 'short|full|email|raw|fuller'
+	git log --pretty=format:'%h was %an, message: %s'
+	git log --pretty=format:'%h was %an, message: %s' --graph // 图像显示日志
 	git log HEAD..c
 	git show
 	git show HEAD	// 查看当前分支
@@ -49,6 +53,21 @@
 	// 以下情况是因为`git merge`产生两个父母
 	git show HEAD^1	// 查看第一个父母信息
 	git show HEAD^2	// 查看第二个父母信息
+	
+###### 日志排序
+	git log ordering
+	git log --pretty=format:'%h was %an, message: %s' --topo-order --graph // 拓扑显示日志
+	git log --pretty=format:'' --date-order --graph
+	git log --pretty=format:'' --revers //逆向显示所有日志
+	
+###### 交互式提交
+	git add -i
+	
+###### 储存
+	git stash		// 保存修改到储存中
+	git stash apply	// 回复原来的修改
+	git stash list  // 查看储存队列
+	git stash clear // 清空储存队列
 
 ###### 标签
 `git tag`
@@ -120,6 +139,10 @@
 	git diff HEAD	// 查看working tree 和 commit差别的
 
 ###### git format-patch 
+	git format-patch origin // 生成一个补丁文件，当前文件和HEAD的差异内容
+	git send-mail
+	git am patchname.patch
+	
 ###### git reset -head 
 ###### git whatchanged -P master...v3
 
@@ -144,5 +167,13 @@
 #### 添加颜色
 	git config color.ui true
 #### 提交模板
-	git config commit.template '/etc/git-commit-template'
+	git config commit.template '~/.gittemplate'
+	
+## git 高级操作
+#### 查找问题
+###### git bisect 查找版本
+###### git blame 查看文件的每个部分是谁修改的
+
+## git hooks
+
 	

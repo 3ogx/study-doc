@@ -173,6 +173,19 @@
 #### 查找问题
 ###### git bisect 查找版本
 ###### git blame 查看文件的每个部分是谁修改的
+	git blame -n filename
+###### git alias 创建别名
+可以直接编辑**~/.gitconfig**来增加别名
+
+	[Alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	ls = ls-tree --name-only HEAD
+	lf = log --format=full
+	lp = log --pretty=short
+	
 
 ## git hooks
 

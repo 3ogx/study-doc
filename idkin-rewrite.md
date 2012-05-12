@@ -36,3 +36,32 @@
 		RewriteRule ^(.*)$ http://open.idkin.net$1%1 [QSA,L]
 	</VirtualHost>
 
+###### nginx 配置
+
+	server {
+		listen 80;
+		server_name open.idkin.com
+		index index.html index.php index.htm
+		root /web_root/Open_PHP;
+
+		if ($query_string ~* ^r=soft/soft(.*)$) {
+			rewrite ^index.php$ http://soft.idkin.com/index.php?r=soft/soft%1 last;
+		}
+	}
+
+	server {
+		listen 80;
+		server_name soft.idkin.com
+		index index.html index.php index.htm
+		root /web_root/Open_PHP;
+
+		rewrite on;
+		if ($host ~* ^soft.idkin.com$) {
+			rewrite $query_string /index.php?$args break;
+			rewrite ^/$ /index.php?r=soft/soft last;
+		}
+
+		if ($query_string !~* ^r=soft/soft(.*)$) {
+			rewrite ^(.*)$ http://open.idkin.com/$1%1 permanent;
+		}
+	}

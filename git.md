@@ -189,4 +189,26 @@
 
 ## git hooks
 
+## Q&A
+#### linux 下使用`git push`出现下面的问题
+
+	perl: warning: Setting locale failed.
+	perl: warning: Please check that your locale settings:
+		LANGUAGE = "en_US:EN",
+		LC_AL = (unset),
+		LC_MESSAGES = "zh_TW.UTF-8",
+		LC_COLLATE = "zh_TW.UTF-8",
+		LC_CTYE = "zh_TW.UTF-8",
+		LANG = "en_US.UTF-8"
+	are supported and installed on your system.
+	perl: warning: Falling back to the standard locale("C")
+
+编辑 ~/.bashrc 加入下面几句:
+
+	export LANG = "zh_TW.UTF-8"
+	export LC_ALL = C
+
+保存退出
+
+	source ~/.bashrc
 	

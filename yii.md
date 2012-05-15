@@ -4,10 +4,10 @@
 
 	'commandMap' => array(
 		'migrate' => array(
-			'class' => 'system.cli.command.migrationCommand',
+			'class' => 'system.cli.commands.MigrateCommand',
 			'migrationPath' => 'application.migrations',
 			'migrationTable' => 'mirgate',
-			'connectionID' => 'DB',
+			'connectionID' => 'db',
 			'templateFile' => 'application.migrations.template'
 		)
 	),

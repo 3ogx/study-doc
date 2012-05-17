@@ -44,8 +44,13 @@
 		index index.html index.php index.htm
 		root /web_root/Open_PHP;
 
+		location /{
+			autoindex on;
+		}
+
 		if ($query_string ~* ^r=soft/soft(.*)$) {
-			rewrite ^index.php$ http://soft.idkin.com/index.php?r=soft/soft%1 last;
+			# rewrite ^index.php$ http://soft.idkin.com/index.php?r=soft/soft%1 last;
+			rewrite ^/ http://soft.idkin.com/index.php? last;
 		}
 	}
 
@@ -55,13 +60,25 @@
 		index index.html index.php index.htm
 		root /web_root/Open_PHP;
 
+		location / {
+			allow all;
+			autoindex on;
+		}
+
 		rewrite on;
 		if ($host ~* ^soft.idkin.com$) {
-			rewrite $query_string /index.php?$args break;
+			# rewrite $query_string /index.php?$args --break-- last;
+			rewrite $query_string /index.php?$args last;
 			rewrite ^/$ /index.php?r=soft/soft last;
+			set $need_rewrite 'o';
 		}
 
 		if ($query_string !~* ^r=soft/soft(.*)$) {
-			rewrite ^(.*)$ http://open.idkin.com/$1%1 permanent;
+			set $need_rewrite '${need_rewrite}k';
+			# --rewrite ^(.*)$ http://open.idkin.com/$1%1 permanent;--
+		}
+
+		if ($need_rewrite = 'ok') { // 顺序不能变
+			rewrite ^/ http://open.idkin.com/index.php parmanent;
 		}
 	}

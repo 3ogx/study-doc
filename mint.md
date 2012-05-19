@@ -33,3 +33,7 @@
 
 #### 访问上一个命令的最后一个参数 `$_`
 	1. cp somefile.ht /home/xx/xx
+#### 把home下的中文设置为英文
+    1. 在终端输入 `export LANG=en_US`
+    2. xdg-user-dirs-gtk-update
+    3. export LANG=zh_TW

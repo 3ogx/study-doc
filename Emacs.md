@@ -33,6 +33,17 @@
 	(add-hook 'local-write-file-hooks
 		'(lambda()
 			(whitespace-cleanup)))
+###### M-u 整个单词大写
+###### M-c 首字母大写
+###### M-I 全部改为小写
+###### M-t 交换整个单词 
+###### C-t 交换单个字母
+###### C-x C-t 交换整行
+###### C-x C-x 快速切换
+###### M-w
+###### M-W
+###### C-K
+###### M-m
 
 #### link
 * [王垠](http://docs.huihoo.com/homepage/shredderyin/links.html)

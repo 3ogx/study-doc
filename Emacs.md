@@ -26,7 +26,13 @@
 > C-x c 
 
 ###### 最近打开的文件
+> (global-set-key (kbd "C-c C-r") 'recentf-open-files)
 > C-c C-r 
+
+##### 保存文件时自动删除多余的空格
+	(add-hook 'local-write-file-hooks
+		'(lambda()
+			(whitespace-cleanup)))
 
 #### link
 * [王垠](http://docs.huihoo.com/homepage/shredderyin/links.html)

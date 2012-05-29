@@ -144,6 +144,7 @@
 	git am patchname.patch
 	
 ###### git reset -head 
+###### git checkout -- filename 恢复一个文件
 ###### git whatchanged -P master...v3
 
 
@@ -211,4 +212,41 @@
 保存退出
 
 	source ~/.bashrc
+
+
+#### 如果本地修改版本不稳定,可以使用stash
+	git stash
+	git pull
+	git stash pop
+#### git remote show orig
+
+
+![git Data Transport Commands](http://roclinux.cn/wp-content/uploads/2010/12/git-transport.png)
 	
+## git 分支 
+* 建立中心版本库,保留两个分支`master`和`develop`
+	1. master 保持发布版本
+	2. develop 为开发版本
+* 再增加辅助分`feature` `release` `hotfix`
+![git branches](http://roclinux.cn/wp-content/uploads/2010/12/bigpicture-git-branch-all.png)
+
+	1. feature 管理功能开发
+		* feature branches 起源于 develop, merge develop
+	![feature branches](http://nvie.com/img/2009/12/fb.png)
+	2. release 帮助构建可发布代码
+		* release branches 起源于 develop, merge develop or master
+		* 建议命名为“release-*”
+		* 通常负责“短期的发布前准备工作”、“小bug的修复工作”、“版本号等元信息的准备工作”。与此同时，“develop”分支又可以承接下一个新功能的开发工作了
+		* 在一段短时间内，在“Release branches”上，我们可以继续修复bug。在此阶段，严禁新功能的并入，新功能应该是被合并到“develop”分支的
+		* 经过若干bug修复后，“Release branches”上的代码已经达到可发布状态，此时，需要完成三个动作：第一是将“Release branches”合并到“master”分支，第二是一定要为master上的这个新提交打TAG（记录里程碑），第三是要将“Release branches”合并回“develop”分支。
+	3. hotfix 可以便捷修复发布版本关健Bug
+		* “Hotfix branches”源于“master”，归于“develop”或“master”，通常命名为“hotfix-*”
+		* 希望避免“develop分支”新功能的开发必须为BUG修复让路的情况
+		* BUG修复后，需要将“Hotfix branches”合并回“master”分支，同时也需要合并回“develop”分支
+	![hotfix branches](http://nvie.com/img/2010/01/hotfix-branches1.png)
+
+
+![git](http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png)
+
+
+

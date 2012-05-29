@@ -20,6 +20,8 @@
 	;; your application name or hostname
 	set :application, "xx.com"
 	set :repository, "git@xx.com:project.git"
+	;; 只保留5个版本
+	set :keep_releases, 5
 	;; deploy_to means deploy path, local path, domain
 	set :deploy_to, "deploy path"
 
@@ -73,3 +75,8 @@
 #### Q&A
 * no tty present and no askpass program specified
 	default_run_options[:pty] = true
+
+#### summary
+[capistrano blog](http://cheat.errtheblog.com/s/capistrano/)
+[ruby on rails](http://ihower.tw/rails3/deployment.html)
+[capistrano note](http://blog.csdn.net/largetalk/article/details/6743090)

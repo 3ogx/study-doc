@@ -248,5 +248,6 @@
 
 ![git](http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png)
 
+[git branches](http://nvie.com/posts/a-successful-git-branching-model/)
 
 

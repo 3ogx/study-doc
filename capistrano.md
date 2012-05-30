@@ -65,6 +65,20 @@
 			sudo "rm -rf #{current_path}/path1/cache/cacheFiles"
 			run "chmod 777 -R #{current_path}/path1/cache"
 		end
+
+		;; clone submodules
+		task :up do
+			set :reso_path, "/var/www/"
+			for i in ['a','b'] do
+				if FileTest.directory?(current_path) then
+					run "#{try_sudo} rm -rf #{current_path}"
+				end
+
+				run "cd #{reso_path}/git/ && git co dev"
+				run "git clone #{reso_path}/git/name #{current_path}/git/name"
+				run "cd #{current_path}/git/name && git co -b deploy"
+			end
+		end
 	end
 	cap deploy:init
 	cap deploy:show_files

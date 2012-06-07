@@ -250,4 +250,9 @@
 
 [git branches](http://nvie.com/posts/a-successful-git-branching-model/)
 
-
+## git 2 svn
+#### 将本地的git库导入svn(不丢失日志)
+	git svn init svn://server/respo/dir
+	git svn fetch
+	git rebase git-svn
+	git svn dcommit

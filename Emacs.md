@@ -68,6 +68,7 @@
 ###### M-W
 ###### C-K
 ###### M-m
+###### C-j 注释下一行
 ###### 蘋果下設置字體
     (set-default-font "-apple-monaco-medium-r-normal--16-140-72-72-m-140-mac-roman")
 
@@ -78,10 +79,33 @@
     (setq mac-command-modifier t)
     (setq mac-option-modifier nil)
 
+###### 帮助
+	C-h k ;; 察看 key bind —> function
+	C-h w ;; 察看 function —> key bind
+	C-h v ;; 察看变量
+	C-h m ;; 察看当前 mode 中得快键，帮助信息
+	C-h f ;; 查看function
+
+###### 跳转
+				C						M 						C-M
+		a,e		行首行尾					语句首尾					函数首尾
+		F,b		以字符为单位前后移动		以单词为单位前后移动		以一个语法单元尾单位前后移动
+		t		交换两个字符				交换两个单词				交换两个语法单位
+		k		删除一行					删除一句					删除一个语法单位
+ 		n,p		上下移动					以list为单位移动			
+ 		h		选择一段					选择一个函数
+ 		l		让当前行在屏幕中间			让当前函数在屏幕中间
+
+###### register
+	C-x r s ;; 可以在寄存器中copy 一段文字.
+	C-x r i ;; 可以恢复这个文字
+	C-x r w ;; 可以记录当前的窗口布局,包括光标位置.
+	C-x r j ;; 恢复窗口布局
+
+###### align-regexp
+	M-x align-regexp
 
 #### link
 * [王垠](http://docs.huihoo.com/homepage/shredderyin/links.html)
 * [王纯业](http://ann77.emacser.com/)
 * [Emacs中文网](http://emacser.com/)
-
-\]r[ereoetowtjw jijl4ªº“£4903”]

@@ -137,11 +137,14 @@
 	git diff 	// 查看working tree 和 index file的差别
 	git diff --cached	// 查看index file  和 commit 差别的
 	git diff HEAD	// 查看working tree 和 commit差别的
+	git diff -- filename
 
 ###### git format-patch 
 	git format-patch origin // 生成一个补丁文件，当前文件和HEAD的差异内容
 	git send-mail
-	git am patchname.patch
+	git am -3 patchname.patch 
+	// 向项目中导入补丁, Git会按照顺序应用每一个补丁; 如果发生了冲突, git会停下来让你手工解决冲突从而完成合并. ("-3"选项会让git执行合并操作; 如果你更喜欢中止并且不改动你的工作树和索引, 你可以省略"-3"选项.)
+	git am --resolve // 这时git会为你创建一个提交, 然后继续应用mailbox中余下的补丁
 	
 ###### git reset -head 
 ###### git checkout -- filename 恢复一个文件
@@ -173,9 +176,16 @@
 ## git 高级操作
 #### 查找问题
 ###### git bisect 查找版本
+	git bisect start
+	git bisect good version
+	git bisect bad version
+
 ###### git blame 查看文件的每个部分是谁修改的
 	git blame -n filename
+
 ###### git alias 创建别名
+	git config --global alias.ci commit
+
 可以直接编辑**~/.gitconfig**来增加别名
 
 	[Alias]
@@ -218,6 +228,7 @@
 	git stash
 	git pull
 	git stash pop
+	git stash aplay
 #### git remote show orig
 
 

@@ -70,8 +70,23 @@
 ###### M-m
 ###### C-j 注释下一行
 ###### C-M-v 滾動別的窗口
+###### C-u 8 n 在光標處插入8個字母n
+###### C-u 0 C-k 删除从光标位置到行首
 ###### 蘋果下設置字體
     (set-default-font "-apple-monaco-medium-r-normal--16-140-72-72-m-140-mac-roman")
+    
+###### 默认emacs tab 只有2个和8个空格的解决方法
+	M-x custimize-variable
+	输入 tab-stop-list
+	发现list里面没有4，新增一条4就好了。
+	
+	或者
+	(customize-variable (quote tab-stop-list))
+	
+	或者
+	(customize-set-variables
+		'(tab-stop-list (quote (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 74 80)))
+	)
 
 ###### mac下綁定`Command`為M
 

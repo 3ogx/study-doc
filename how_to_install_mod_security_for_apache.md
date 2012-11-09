@@ -73,3 +73,6 @@ modsecurity 是一个开源的入侵检测和防禦引擎的web應用.
 		# Prevent XSS atacks (HTML/Javascript injection)
 		SecFilter "<(.|n)+>"
 	</IfModule>
+	
+	
+[https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual](https://github.com/SpiderLabs/ModSecurity/wiki/Reference-Manual)

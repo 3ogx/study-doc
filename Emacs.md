@@ -120,6 +120,16 @@
 
 ###### align-regexp
 	M-x align-regexp
+	
+###### 替換^M
+
+	M-x replace C-q C-m  M-j
+
+	(defun hide-ctrl-m()
+		(interactive)
+		(setq buffer-display-table (make-display-table))
+		(aset buffer-display-table ?\^M [])
+	)
 
 #### link
 * [王垠](http://docs.huihoo.com/homepage/shredderyin/links.html)

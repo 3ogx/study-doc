@@ -84,3 +84,22 @@
        zii                  path_to_webroot/framework/zii
        webroot              path_to_webroot
        ext                  path_to_webroot/protected/extensions
+       
+       
+       
+#### 文本框自动选择jQuery扩展
+
+		$.fn.extend({
+			selectRange:function(start,end){
+				return this.each(function(){
+					if (this.setSelectionRange) {
+						this.focus();
+						this.setSelectionRange(start,end);
+					} else {
+					var range = this.createTextRange();
+					range.collapse(true);
+					range.moveEnd("character", end);
+					range.moveStart("character",start);
+				});
+			}
+		})

@@ -101,5 +101,8 @@
 					range.moveEnd("character", end);
 					range.moveStart("character",start);
 				});
-			}
+			},
+			moveRange:function(xPosition) {
+				return this.each(function(){});
+			},
 		})

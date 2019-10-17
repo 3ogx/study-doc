@@ -6,7 +6,7 @@
 ## 相关工具介绍
 + iTerm2： Terminal 终端的替代品，拥有更多强大的功能，想了解更多请戳 [官网](https://www.iterm2.com/)；
 	+ 其实也可以不用这个工具，习惯了Mac 自带的终端，后面直接导入配置就可以了。
-	+ ![](./images/Screen Shot 2019-10-17 at 10.03.10 AM.png)
+	+ ![](./images/ScreenShot2019-10-17at10.03.10AM.png)
 + XCode’s Command line tools: 开发环境集成，包含 git、gcc 等重要工具；
 + zsh：Linux 的一种 shell 外壳，强大的虚拟终端，和 bash 属于同类产品，OS X 已自带；
 + Oh-My-Zsh: 用来管理 zsh 的配置，同时还有很多社区贡献的主题配置以及好用的插件可供使用，了解更多请戳 Oh-My-Zsh [官网](https://ohmyz.sh/)；

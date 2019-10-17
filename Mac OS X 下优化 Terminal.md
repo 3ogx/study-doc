@@ -1,9 +1,9 @@
-#Mac OS X 下优化 Terminal
+# Mac OS X 下优化 Terminal
 先看下效果
 ![](./images/ScreenShot2019-10-17at10.02.53AM.png)
 
 
-##相关工具介绍
+## 相关工具介绍
 + iTerm2： Terminal 终端的替代品，拥有更多强大的功能，想了解更多请戳 [官网](https://www.iterm2.com/)；
 	+ 其实也可以不用这个工具，习惯了Mac 自带的终端，后面直接导入配置就可以了。
 	+ ![](./images/Screen Shot 2019-10-17 at 10.03.10 AM.png)
@@ -11,13 +11,13 @@
 + zsh：Linux 的一种 shell 外壳，强大的虚拟终端，和 bash 属于同类产品，OS X 已自带；
 + Oh-My-Zsh: 用来管理 zsh 的配置，同时还有很多社区贡献的主题配置以及好用的插件可供使用，了解更多请戳 Oh-My-Zsh [官网](https://ohmyz.sh/)；
 
-##配置总览
+## 配置总览
 1. iTerm2
 2. Oh-My-Zsh
 3. agnoster 主题
 4. zsh 命令语法高亮
 
-##安装步骤
+## 安装步骤
 1. 安装 iTerm2
 2. 安装 XCode’s Command line tools
 
@@ -55,7 +55,7 @@
 	3. 选择固定宽度，选择自己喜欢的字体。注意： iTerm2 可以实时看到效果，结尾不是 for Powerline 的会乱码。
 	4. 接着修改字体颜色，选择另一项 **Colors**, 点击 **Color Presets**, 选择 **Solarized Dark**
 
-##安装配置主题
+## 安装配置主题
 
 装好之后就可以换到 agnoster 主题，Oh My Zsh 一般自带有这个主题。
 
@@ -69,7 +69,7 @@
 
 然后把里面 ZSH_THEME 的值改为 ZSH_THEME="agnoster"，保存退出.
 
-##修改命令提示符
+## 修改命令提示符
 默认的命令提示符为 **user@userdemackbookPro**，这样的提示符配合 powerlevel9k 主题太过冗长，因此我选择将该冗长的提示符去掉，在 **~/.zshrc** 配置文件后面追加如下内容：
 
 + 注意：DEFAULT_USER 的值必须要是系统用户名才能生效
